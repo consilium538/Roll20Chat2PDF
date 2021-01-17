@@ -1,0 +1,26 @@
+\chapter{\VAR{section1}}
+\BLOCK{ for chat_elem in chat }
+\BLOCK{ if chat_elem[0] }
+\noindent { %
+    \includegraphics[height=1.2em]{\VAR{ chat_elem[1] }} %
+    \color{Gray} \textbf{\VAR{ chat_elem[0] }} %
+} %
+\BLOCK{ for chat_elem in chat_elem[2] }
+\VAR{ chat_elem[1] }
+
+\BLOCK{ endfor }
+\BLOCK{ else }
+\BLOCK{ if chat_elem[2][0][0]=="emote" }
+\centerline{ %
+    \includegraphics[height=1.2em]{\VAR{ chat_elem[1] }} %
+    \color{Gray} \VAR{ chat_elem[2][0][1] } %
+} %
+
+\BLOCK{ elif chat_elem[2][0][0]=="desc" }
+\centerline{ %
+    \color{Gray} \VAR{ chat_elem[2][0][1] } %
+}
+
+\BLOCK{ endif }
+\BLOCK{ endif }
+\BLOCK{ endfor }

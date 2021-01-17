@@ -1,0 +1,57 @@
+\documentclass[10pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[hangul]{kotex}
+
+\usepackage{geometry}
+\geometry{
+    textwidth=10.2cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headsep=5mm,
+    foot=1cm,
+    ignoreheadfoot,
+    % bindingoffset=6mm,
+    a5paper
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\titletext}
+\fancyfoot[CE,CO]{\thepage}
+\fancyfoot[RO,LE]{Chapter \thechapter}
+\fancyfoot[LO,RE]{\authorname}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage[CJK, Latin, UnifiedCanadianAboriginalSyllabics]{ucharclasses}
+
+\newfontfamily{\defaultfont}{KoPubWorld Dotum_Pro Medium.otf}[
+    AutoFakeSlant = 0.4,
+    ExternalLocation = Fonts/,
+    BoldFont = KoPubWorld Dotum_Pro Bold.otf
+]
+\newfontfamily{\escapefont}{DejaVu Sans}
+\setDefaultTransitions{\defaultfont}{}
+\setTransitionTo{UnifiedCanadianAboriginalSyllabics}{\escapefont}
+
+\usepackage{indentfirst}
+\setlength\parindent{2em}
+\usepackage[dvipsnames]{xcolor}
+
+\newcommand{\titletext}[0]{Sample Title}
+\newcommand{\authorname}[0]{Sample Author}
+\newcommand{\backupdate}[0]{2021. 01. 17.}
+
+\begin{document}
+
+\title{\Huge{\titletext}}
+\author{\authorname}
+\date{\backupdate}
+
+\maketitle
+\tableofcontents
+\input{formatted.tex}
+
+\end{document}
